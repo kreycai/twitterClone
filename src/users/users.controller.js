@@ -2,8 +2,8 @@ import * as userService from "./users.service.js";
 import * as authService from "../auth/auth.service.js";
 
 const createUserController = async (req, res) => {
-  const { name, username, email, password, avatar } = req.body;
-  if (!name|| !username || !email || !password || !avatar) {
+  const { name, username, email, password, photo } = req.body;
+  if (!name|| !username || !email || !password || !photo) {
     return res.status(400).send({ message: "alguns campos estão faltando." });
   }
 
@@ -31,7 +31,7 @@ const createUserController = async (req, res) => {
       name,
       username,
       email,
-      avatar,
+      photo,
     },
     token,
   });
